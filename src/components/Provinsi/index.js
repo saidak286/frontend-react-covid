@@ -2,7 +2,7 @@ import Table from "../Table/index";
 import StyledProv from "./index.Styled";
 
 function Provinsi(props) {
-    const {provinces, setProvinces} = props;
+    const provinces = useSelector((store) => store.covids.provins);
     return (
         <StyledProv>
             <section>
@@ -24,7 +24,7 @@ function Provinsi(props) {
                     <tbody>
                         {provinces.map((data, index) => (
                             <Table
-                                index={index} key={data.kota} kota={data.kota} kasus={data.kasus} sembuh={data.sembuh} dirawat={data.dirawat} meninggal={data.meninggal}
+                                index={index} key={data.kota} provinces={data}
                             />
                          ))}
                     </tbody>
